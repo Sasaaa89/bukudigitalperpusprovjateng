@@ -1,0 +1,309 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3307
+-- Generation Time: Nov 28, 2025 at 03:59 AM
+-- Server version: 8.4.3
+-- PHP Version: 8.3.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `tamu_pengujung_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int UNSIGNED NOT NULL,
+  `username` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `nama_lengkap` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`, `nama_lengkap`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '$2y$10$hKmHdEoRkM4jqeIDtDa4ZO2y4D/KbPP6CAKm0hlcoxysFdcJD34WS', 'Administrator', 'admin@perpustakaan.com', '2025-11-27 01:28:26', '2025-11-27 01:28:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int UNSIGNED NOT NULL,
+  `form_data` json NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_general_ci,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `form_data`, `ip_address`, `user_agent`, `created_at`, `updated_at`) VALUES
+(1, '{\"email\": \"user@test.com\", \"rating\": \"Sangat Baik\", \"kritik_saran\": \"-\", \"nama_lengkap\": \"Testing Dummy 01\"}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', '2025-11-27 07:58:04', '2025-11-27 07:58:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `form_fields`
+--
+
+CREATE TABLE `form_fields` (
+  `id` int UNSIGNED NOT NULL,
+  `form_type` enum('feedback','guest_book') COLLATE utf8mb4_general_ci NOT NULL,
+  `field_name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `field_label` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `field_type` enum('text','textarea','select','file','email','number','date') COLLATE utf8mb4_general_ci NOT NULL,
+  `is_required` tinyint(1) NOT NULL DEFAULT '0',
+  `field_options` text COLLATE utf8mb4_general_ci,
+  `sort_order` int NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `form_fields`
+--
+
+INSERT INTO `form_fields` (`id`, `form_type`, `field_name`, `field_label`, `field_type`, `is_required`, `field_options`, `sort_order`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'feedback', 'nama_lengkap', 'Nama Lengkap', 'text', 1, NULL, 1, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(2, 'feedback', 'email', 'Email', 'email', 0, NULL, 2, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(3, 'feedback', 'kritik_saran', 'Kritik & Saran', 'textarea', 1, NULL, 3, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(4, 'feedback', 'rating', 'Rating Layanan', 'select', 1, '[\"Sangat Baik\",\"Baik\",\"Cukup\",\"Kurang\",\"Sangat Kurang\"]', 4, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(5, 'guest_book', 'nama_lengkap', 'Nama Lengkap', 'text', 1, NULL, 1, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(6, 'guest_book', 'asal_instansi', 'Asal Instansi', 'text', 1, NULL, 2, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(7, 'guest_book', 'keperluan', 'Keperluan', 'select', 1, 'keperluan_table', 3, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(8, 'guest_book', 'nomor_telepon', 'Nomor Telepon', 'text', 0, NULL, 4, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(9, 'guest_book', 'pesan', 'Pesan', 'textarea', 0, NULL, 5, 1, '2025-11-27 01:29:48', '2025-11-27 01:29:48'),
+(11, 'feedback', 'Request Buku', 'Masukan nama buku, isbn, kategori, tahun , publisher', 'textarea', 1, '[]', 5, 1, '2025-11-28 03:18:38', '2025-11-28 03:18:38'),
+(12, 'guest_book', 'Lampiran File', 'Lampiran File ', 'file', 0, '[]', 6, 1, '2025-11-28 03:30:35', '2025-11-28 03:30:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guest_book`
+--
+
+CREATE TABLE `guest_book` (
+  `id` int UNSIGNED NOT NULL,
+  `form_data` json NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_general_ci,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `guest_book`
+--
+
+INSERT INTO `guest_book` (`id`, `form_data`, `ip_address`, `user_agent`, `created_at`, `updated_at`) VALUES
+(2, '{\"pesan\": \"test\", \"keperluan\": \"Belajar Kelompok\", \"nama_lengkap\": \"Testing Dummy 01\", \"asal_instansi\": \"Test\", \"nomor_telepon\": \"TEST\"}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', '2025-11-28 03:28:58', '2025-11-28 03:28:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `keperluan`
+--
+
+CREATE TABLE `keperluan` (
+  `id` int UNSIGNED NOT NULL,
+  `nama_keperluan` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_general_ci,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `keperluan`
+--
+
+INSERT INTO `keperluan` (`id`, `nama_keperluan`, `deskripsi`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Membaca Buku', 'Membaca buku di perpustakaan', 1, '2025-11-27 01:28:34', '2025-11-27 01:28:34'),
+(2, 'Meminjam Buku', 'Meminjam buku untuk dibawa pulang', 1, '2025-11-27 01:28:34', '2025-11-27 01:28:34'),
+(3, 'Penelitian', 'Melakukan penelitian atau riset', 1, '2025-11-27 01:28:34', '2025-11-27 01:28:34'),
+(4, 'Belajar Kelompok', 'Belajar bersama dalam kelompok', 1, '2025-11-27 01:28:34', '2025-11-27 01:28:34'),
+(5, 'Menggunakan Komputer', 'Menggunakan fasilitas komputer perpustakaan', 1, '2025-11-27 01:28:34', '2025-11-27 01:28:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` bigint UNSIGNED NOT NULL,
+  `version` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `class` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `group` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `namespace` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `time` int NOT NULL,
+  `batch` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
+(1, '2025-10-23-160935', 'App\\Database\\Migrations\\CreateAdminsTable', 'default', 'App', 1764205905, 1),
+(2, '2025-10-23-161001', 'App\\Database\\Migrations\\CreateQrTokensTable', 'default', 'App', 1764205905, 1),
+(3, '2025-10-23-161016', 'App\\Database\\Migrations\\CreateKeperluanTable', 'default', 'App', 1764205905, 1),
+(4, '2025-10-23-161029', 'App\\Database\\Migrations\\CreateFormFieldsTable', 'default', 'App', 1764205905, 1),
+(5, '2025-10-23-161045', 'App\\Database\\Migrations\\CreateFeedbackTable', 'default', 'App', 1764205905, 1),
+(6, '2025-10-23-161100', 'App\\Database\\Migrations\\CreateGuestBookTable', 'default', 'App', 1764205905, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `qr_tokens`
+--
+
+CREATE TABLE `qr_tokens` (
+  `id` int UNSIGNED NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `created_by` int UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `qr_tokens`
+--
+
+INSERT INTO `qr_tokens` (`id`, `token`, `is_active`, `created_by`, `created_at`, `updated_at`) VALUES
+(1, '27a99887443ddee9fb0dbb13e3b2371fcb8aad32f6bd0c6dfa5aed320ba337a4', 0, 1, '2025-11-27 02:25:18', '2025-11-27 02:25:27'),
+(2, 'a600564a36693ee8e98053c5a4b2efff306070634a0b1d5ad91dcfaf17ca1dc0', 0, 1, '2025-11-27 02:25:27', '2025-11-27 02:25:31'),
+(3, '3a52d416f4573ed3ac94e1104619e4b65cabcdc28ada9f30c9ec51e8abb3ec85', 0, 1, '2025-11-27 02:25:31', '2025-11-27 02:28:02'),
+(4, 'e71dd2a1e833c51ec341c083ec1c870497478f3e072863230cc67b240c8cd878', 0, 1, '2025-11-27 02:28:02', '2025-11-27 02:48:50'),
+(5, '3d45252ffff7cf717d1ac6b846d2235c9b46ebfdd65aa0a0fa28abdfe9fa8af3', 0, 1, '2025-11-27 02:48:50', '2025-11-27 03:05:57'),
+(6, 'bc918c3a0304615d6deefb865f7049e5d9a60914eced580079eb1ba21fd9e474', 0, 1, '2025-11-27 03:05:57', '2025-11-27 04:12:46'),
+(7, '8848a3831a335e5ce285050702d91110c25a3442bd34e345f09e0c45f4dfea55', 0, 1, '2025-11-27 04:12:46', '2025-11-27 07:02:49'),
+(8, 'd0ec7bb368639e16352916053a836b24352986f6b09a5ad2d6d93662777fd389', 1, 1, '2025-11-27 07:02:49', '2025-11-27 07:02:49');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `form_fields`
+--
+ALTER TABLE `form_fields`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `guest_book`
+--
+ALTER TABLE `guest_book`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `keperluan`
+--
+ALTER TABLE `keperluan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `qr_tokens`
+--
+ALTER TABLE `qr_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `token` (`token`),
+  ADD KEY `qr_tokens_created_by_foreign` (`created_by`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `form_fields`
+--
+ALTER TABLE `form_fields`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `guest_book`
+--
+ALTER TABLE `guest_book`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `keperluan`
+--
+ALTER TABLE `keperluan`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `qr_tokens`
+--
+ALTER TABLE `qr_tokens`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `qr_tokens`
+--
+ALTER TABLE `qr_tokens`
+  ADD CONSTRAINT `qr_tokens_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;

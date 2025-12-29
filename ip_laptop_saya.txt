@@ -1,0 +1,41 @@
+C:\Users\LENOVO>ipconfig
+
+Windows IP Configuration
+
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 10:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter VMware Network Adapter VMnet1:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::37ad:c0c9:b388:74f8%16
+   IPv4 Address. . . . . . . . . . . : 192.168.229.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter VMware Network Adapter VMnet8:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::af3b:140:c209:a12a%13
+   IPv4 Address. . . . . . . . . . . : 192.168.230.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   IPv6 Address. . . . . . . . . . . : 2404:c0:7027:3779:39c:52ce:5e5c:935c
+   Temporary IPv6 Address. . . . . . : 2404:c0:7027:3779:5121:9697:7b68:52d3
+   Link-local IPv6 Address . . . . . : fe80::babb:b579:619b:49ba%14
+   IPv4 Address. . . . . . . . . . . : 10.79.36.207
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::d865:66ff:fe54:82ff%14
+                                       10.79.36.244
