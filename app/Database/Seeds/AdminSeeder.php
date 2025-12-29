@@ -10,7 +10,7 @@ class AdminSeeder extends Seeder
     {
         $data = [
             'username'    => 'admin',
-            'password'    => password_hash('admin123', PASSWORD_DEFAULT),
+            'password'    => '$2y$10$EljBRFuOaaPt/vvsphkrTOfIFHKH.zmaR9GsWFGSmGYNmmaE.rZqC',
             'nama_lengkap' => 'Administrator',
             'email'       => 'admin@perpustakaan.com',
             'created_at'  => date('Y-m-d H:i:s'),

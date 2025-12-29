@@ -18,7 +18,7 @@ try {
     }
     
     // New password hash
-    $newPasswordHash = '$2y$10$grurhCeWUtZXNTS.sS.82Oj.ehsPN5z3JYdcKJrU3Gg6sQ39j0soG';
+    $newPasswordHash = '$2y$10$EljBRFuOaaPt/vvsphkrTOfIFHKH.zmaR9GsWFGSmGYNmmaE.rZqC';
     
     // Escape for safety
     $newPasswordHash = $conn->real_escape_string($newPasswordHash);
