@@ -25,17 +25,16 @@ class QrController extends BaseController
     {
         $activeToken = $this->qrTokenModel->getActiveToken();
         
-        // Gunakan IP lokal untuk QR URL agar bisa di-akses dari device lain
-        $localIp = $this->getLocalIpAddress();
+        // Gunakan baseURL dari config (bisa dari environment di production)
+        $baseUrl = rtrim(config('App')->baseURL, '/');
         $qrUrl = $activeToken 
-            ? 'http://' . $localIp . ':8080/welcome?token=' . $activeToken['token']
-            : 'http://' . $localIp . ':8080/welcome';
+            ? $baseUrl . '/welcome?token=' . $activeToken['token']
+            : $baseUrl . '/welcome';
 
         $data = [
             'title' => 'Generate QR Code',
             'activeToken' => $activeToken,
-            'qrUrl' => $qrUrl,
-            'localIp' => $localIp
+            'qrUrl' => $qrUrl
         ];
 
         return view('admin/qr/index', $data);
@@ -60,15 +59,14 @@ class QrController extends BaseController
             return redirect()->to('/admin/generate-qr')->with('error', 'Tidak ada QR Code aktif!');
         }
         
-        // Gunakan IP lokal untuk QR URL
-        $localIp = $this->getLocalIpAddress();
-        $qrUrl = 'http://' . $localIp . ':8080/welcome?token=' . $activeToken['token'];
+        // Gunakan baseURL dari config
+        $baseUrl = rtrim(config('App')->baseURL, '/');
+        $qrUrl = $baseUrl . '/welcome?token=' . $activeToken['token'];
         
         $data = [
             'title' => 'Print QR Code',
             'qrUrl' => $qrUrl,
-            'token' => $activeToken['token'],
-            'localIp' => $localIp
+            'token' => $activeToken['token']
         ];
 
         return view('admin/qr/print', $data);
@@ -85,9 +83,9 @@ class QrController extends BaseController
             return redirect()->to('/admin/generate-qr')->with('error', 'Tidak ada QR Code aktif!');
         }
         
-        // Gunakan IP lokal untuk QR URL
-        $localIp = $this->getLocalIpAddress();
-        $qrUrl = 'http://' . $localIp . ':8080/welcome?token=' . $activeToken['token'];
+        // Gunakan baseURL dari config
+        $baseUrl = rtrim(config('App')->baseURL, '/');
+        $qrUrl = $baseUrl . '/welcome?token=' . $activeToken['token'];
         
         // Generate QR Code menggunakan Builder dengan API v6
         $builder = new Builder(
@@ -241,9 +239,9 @@ class QrController extends BaseController
      */
     public function qrImage($token)
     {
-        // Gunakan IP lokal untuk QR URL
-        $localIp = $this->getLocalIpAddress();
-        $qrUrl = 'http://' . $localIp . ':8080/welcome?token=' . $token;
+        // Gunakan baseURL dari config
+        $baseUrl = rtrim(config('App')->baseURL, '/');
+        $qrUrl = $baseUrl . '/welcome?token=' . $token;
         
         $builder = new Builder(
             writer: new PngWriter(),

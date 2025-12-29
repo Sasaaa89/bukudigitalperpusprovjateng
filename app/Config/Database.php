@@ -26,14 +26,14 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'tamu_pengujung_db',
+        'hostname'     => getenv('database.default.hostname') ?: 'localhost',
+        'username'     => getenv('database.default.username') ?: 'root',
+        'password'     => getenv('database.default.password') ?: '',
+        'database'     => getenv('database.default.database') ?: 'tamu_pengujung_db',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
-        'DBDebug'      => true,
+        'DBDebug'      => getenv('CI_ENVIRONMENT') === 'production' ? false : true,
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3307,
+        'port'         => (int)(getenv('database.default.port') ?: 3306),
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
