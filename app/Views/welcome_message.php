@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sistem Selamat Datang Di Layanan Pengunjung Perpustakaan Provinsi Jawa Tengah</title>
+    <title>Sistem Selamat Datang Di Layanan Buku Tamu Digital Perpustakaan Provinsi Jawa Tengah</title>
     <meta name="description" content="Platform digital untuk mengelola layanan pengunjung perpustakaan dengan fitur lengkap">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e40af'><path d='M4 2h16c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m0 2v16h16V4H4m2 2h12v2H6V6m0 3h12v2H6V9m0 3h12v2H6v-2z'/></svg>">
@@ -225,7 +225,7 @@
 
     <div class="heroe">
 
-        <h1>Selamat Datang Di Layanan Pengunjung Perpustakaan Provinsi Jawa Tengah</h1>
+        <h1>Selamat Datang Di Layanan Buku Tamu Digital Perpustakaan Provinsi Jawa Tengah</h1>
 
         <h2>Platform Digital Layanan Pengunjung</h2>
 
@@ -239,7 +239,7 @@
 
     <h1>Tentang Sistem Ini</h1>
 
-    <p>Sistem Layanan Pengunjung Perpustakaan adalah platform digital untuk mengelola surat kunjungan perpustakaan.</p>
+    <p>Sistem Layanan Buku Tamu Digital Perpustakaan adalah platform digital untuk mengelola surat kunjungan perpustakaan.</p>
 
     <p>Untuk edit halaman ini, Anda dapat menemukan file di:
 
@@ -270,14 +270,14 @@
             Kontak
         </h2>
 
-        <p>Untuk pertanyaan atau masalah teknis mengenai sistem layanan pengunjung perpustakaan, silakan hubungi tim dukungan perpustakaan. Kami siap membantu Anda mendapatkan informasi lebih lanjut dan resolusi untuk masalah apapun.</p>
+        <p>Untuk pertanyaan atau masalah teknis mengenai sistem layanan buku tamu digital perpustakaan, silakan hubungi tim dukungan perpustakaan. Kami siap membantu Anda mendapatkan informasi lebih lanjut dan resolusi untuk masalah apapun.</p>
 
         <h2>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><line x1='176' y1='48' x2='336' y2='48' class="svg-stroke" /><line x1='118' y1='304' x2='394' y2='304' class="svg-stroke" /><path d='M208,48v93.48a64.09,64.09,0,0,1-9.88,34.18L73.21,373.49C48.4,412.78,76.63,464,123.08,464H388.92c46.45,0,74.68-51.22,49.87-90.51L313.87,175.66A64.09,64.09,0,0,1,304,141.48V48' class="svg-stroke" /></svg>
              Fitur Unggulan
         </h2>
 
-        <p>Sistem Layanan Pengunjung Perpustakaan dilengkapi dengan berbagai fitur unggulan untuk memudahkan pengelolaan kunjungan perpustakaan. Dari pendaftaran pengunjung, pengelolaan surat kunjungan, hingga laporan statistik pengunjung - semua tersedia dalam satu platform yang mudah digunakan.</p>
+        <p>Sistem Layanan Buku Tamu Digital Perpustakaan dilengkapi dengan berbagai fitur unggulan untuk memudahkan pengelolaan kunjungan perpustakaan. Dari pendaftaran pengunjung, pengelolaan surat kunjungan, hingga laporan statistik pengunjung - semua tersedia dalam satu platform yang mudah digunakan.</p>
 
     </section>
 
@@ -296,7 +296,7 @@
 
     <div class="copyrights">
 
-        <p>&copy; <?= date('Y') ?> Sistem Layanan Pengunjung Perpustakaan. Platform ini dibangun untuk mendukung operasional perpustakaan modern.</p>
+        <p>&copy; <?= date('Y') ?> Sistem Layanan Buku Tamu Digital Perpustakaan. Platform ini dibangun untuk mendukung operasional perpustakaan modern.</p>
 
     </div>
 

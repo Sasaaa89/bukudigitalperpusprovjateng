@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'Perpustakaan' ?> - Sistem Selamat Datang Di Layanan Pengunjung Perpustakaan Provinsi Jawa Tengah</title>
+    <title><?= $title ?? 'Perpustakaan' ?> - Sistem Selamat Datang Di Layanan Buku Tamu Digital Perpustakaan Provinsi Jawa Tengah</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e40af'><path d='M4 2h16c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2m0 2v16h16V4H4m2 2h12v2H6V6m0 3h12v2H6V9m0 3h12v2H6v-2z'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -129,7 +129,7 @@
 
             <!-- Footer -->
             <div class="text-center mt-8 text-gray-500 text-sm">
-                <p>&copy; <?= date('Y') ?> Sistem Selamat Datang Di Layanan Pengunjung Perpustakaan Provinsi Jawa Tengah</p>
+                <p>&copy; <?= date('Y') ?> Sistem Selamat Datang Di Layanan Buku Tamu Digital Perpustakaan Provinsi Jawa Tengah</p>
             </div>
         </div>
     </div>

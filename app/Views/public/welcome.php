@@ -195,7 +195,7 @@
                 Selamat Datang
             </h1>
             <h2 class="text-2xl font-semibold text-gray-700 mb-2">
-                Layanan Pengunjung Perpustakaan
+                Layanan Buku Tamu Digital Perpustakaan
             </h2>
             <p class="text-lg text-gray-600 mb-6">
                 Provinsi Jawa Tengah

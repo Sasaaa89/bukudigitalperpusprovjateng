@@ -506,7 +506,7 @@
 
     <!-- FOOTER -->
     <div class="footer">
-        <p>Dokumen ini digenerate secara otomatis dari Sistem Layanan Pengunjung Perpustakaan</p>
+        <p>Dokumen ini digenerate secara otomatis dari Sistem Layanan Buku Tamu Digital Perpustakaan</p>
         <p>Perpustakaan Provinsi Jawa Tengah - Semua Hak Dilindungi</p>
         <p>Generated <?php echo date('d/m/Y H:i:s'); ?></p>
     </div>
