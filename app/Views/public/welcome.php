@@ -219,7 +219,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Kritik & Saran Card -->
                 <a href="/form/feedback<?= isset($token) ? '?token='.$token : '' ?>" 
-                   class="service-card group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-400">
+                   class="service-card group relative overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-400">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 transform group-hover:scale-110 transition-transform duration-500"></div>
                     <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);"></div>
                     <div class="relative p-10 text-white z-10">
@@ -241,7 +241,7 @@
                 
                 <!-- Buku Tamu Card -->
                 <a href="/form/guest-book<?= isset($token) ? '?token='.$token : '' ?>" 
-                   class="service-card group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-400">
+                   class="service-card group relative overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-400">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-700 transform group-hover:scale-110 transition-transform duration-500"></div>
                     <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400" style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);"></div>
                     <div class="relative p-10 text-white z-10">
