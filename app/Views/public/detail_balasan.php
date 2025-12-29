@@ -22,7 +22,7 @@
 
                 <div>
                     <label class="block text-sm font-medium text-gray-600 mb-1">Nomor Telepon</label>
-                    <p class="text-gray-900 font-semibold"><?= esc($formData['no_telepon'] ?? '-') ?></p>
+                    <p class="text-gray-900 font-semibold"><?= esc($formData['nomor_telepon'] ?? '-') ?></p>
                 </div>
 
                 <div>
