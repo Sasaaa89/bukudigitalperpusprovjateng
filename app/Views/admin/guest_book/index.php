@@ -8,6 +8,54 @@
     </div>
 </div>
 
+<!-- Filter Section -->
+<div class="bg-white rounded-lg shadow p-4 mb-6">
+    <form action="/admin/guest-book" method="GET" class="flex gap-4 items-end">
+        <div class="flex-1">
+            <label for="keperluan" class="block text-sm font-medium text-gray-700 mb-2">Filter Berdasarkan Keperluan</label>
+            <select name="keperluan" id="keperluan" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <option value="">-- Semua Keperluan --</option>
+                <?php if (!empty($keperluanList)): ?>
+                    <?php foreach ($keperluanList as $keperluan): ?>
+                        <option value="<?= esc($keperluan['nama_keperluan']) ?>" 
+                                <?= ($selectedKeperluan == $keperluan['nama_keperluan']) ? 'selected' : '' ?>>
+                            <?= esc($keperluan['nama_keperluan']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </select>
+        </div>
+        <div class="flex gap-2">
+            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                <i class="fas fa-filter"></i> Filter
+            </button>
+            <a href="/admin/guest-book" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 flex items-center gap-2">
+                <i class="fas fa-times"></i> Reset
+            </a>
+        </div>
+    </form>
+</div>
+
+<!-- Export Section -->
+<div class="bg-white rounded-lg shadow p-4 mb-6">
+    <h3 class="text-sm font-semibold text-gray-700 mb-3">Unduh Data</h3>
+    <div class="flex gap-2 flex-wrap">
+        <a href="/admin/guest-book/export-pdf<?= !empty($selectedKeperluan) ? '?keperluan=' . urlencode($selectedKeperluan) : '' ?>" 
+           class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 flex items-center gap-2 text-sm">
+            <i class="fas fa-file-pdf"></i> Unduh PDF
+        </a>
+        <a href="/admin/guest-book/export-excel<?= !empty($selectedKeperluan) ? '?keperluan=' . urlencode($selectedKeperluan) : '' ?>" 
+           class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2 text-sm">
+            <i class="fas fa-file-excel"></i> Unduh Excel
+        </a>
+        <?php if (!empty($selectedKeperluan)): ?>
+            <span class="text-xs text-gray-600 ml-2 py-2">
+                <i class="fas fa-info-circle"></i> Mengunduh data dengan filter: <strong><?= esc($selectedKeperluan) ?></strong>
+            </span>
+        <?php endif; ?>
+    </div>
+</div>
+
 <div class="bg-white rounded-lg shadow overflow-hidden">
     <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
@@ -85,7 +133,7 @@
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="6" class="px-6 py-4 text-center text-gray-500">Belum ada data buku tamu</td>
+                        <td colspan="7" class="px-6 py-4 text-center text-gray-500">Belum ada data buku tamu</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

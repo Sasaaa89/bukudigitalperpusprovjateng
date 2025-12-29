@@ -65,6 +65,8 @@ $routes->group('admin', ['filter' => 'adminauth'], function($routes) {
     $routes->post('guest-book/save-reply/(:num)', 'Admin\GuestBookController::saveReply/$1');
     $routes->get('guest-book/delete-reply/(:num)', 'Admin\GuestBookController::deleteReply/$1');
     $routes->get('guest-book/delete/(:num)', 'Admin\GuestBookController::delete/$1');
+    $routes->get('guest-book/export-pdf', 'Admin\GuestBookController::exportPdf');
+    $routes->get('guest-book/export-excel', 'Admin\GuestBookController::exportExcel');
     
     // File Download
     $routes->get('download-file/(:any)', 'Admin\FileController::download/$1');

@@ -3,69 +3,115 @@
 <?= $this->section('content') ?>
 
 <style>
-    /* Animated Background */
+    /* Premium Animated Background with Shapes */
     .welcome-background {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
+        background: linear-gradient(135deg, #C8E9F8 0%, #B3D9F2 25%, #D9B8F0 50%, #F0C8F0 75%, #FFE6CC 100%);
+        background-size: 200% 200%;
+        animation: backgroundShift 25s ease infinite;
         z-index: -2;
+        overflow: hidden;
     }
 
-    @keyframes gradientShift {
+    .welcome-background::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 10%, rgba(255,255,255,0.18) 0%, transparent 50%);
+        animation: moveBackground 20s linear infinite;
+    }
+
+    @keyframes backgroundShift {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
 
-    /* Animated Blobs */
+    @keyframes moveBackground {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Animated Blobs - Enhanced */
     .blob {
         position: fixed;
         z-index: -1;
-        opacity: 0.3;
+        opacity: 0.25;
         border-radius: 50%;
-        filter: blur(60px);
-        animation: blobAnimation 10s infinite;
+        filter: blur(100px);
+        animation: blobAnimation 15s ease-in-out infinite;
+        mix-blend-mode: screen;
     }
 
     .blob-1 {
-        top: -10%;
-        left: -5%;
-        width: 400px;
-        height: 400px;
-        background: #667eea;
-        animation-duration: 12s;
+        top: -20%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, #88D8FF, #5FCDE0);
+        animation-duration: 20s;
         animation-delay: 0s;
     }
 
     .blob-2 {
-        top: 40%;
-        right: -10%;
-        width: 350px;
-        height: 350px;
-        background: #f093fb;
-        animation-duration: 14s;
-        animation-delay: -2s;
+        top: 20%;
+        right: -5%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, #D9A8FF, #C68FFF);
+        animation-duration: 22s;
+        animation-delay: -5s;
     }
 
     .blob-3 {
-        bottom: -5%;
-        left: 20%;
-        width: 380px;
-        height: 380px;
-        background: #4facfe;
-        animation-duration: 16s;
-        animation-delay: -4s;
+        bottom: -15%;
+        left: 10%;
+        width: 550px;
+        height: 550px;
+        background: radial-gradient(circle, #FFBBDD, #FF99CC);
+        animation-duration: 24s;
+        animation-delay: -10s;
     }
 
     @keyframes blobAnimation {
         0%, 100% { transform: translate(0, 0) scale(1); }
-        33% { transform: translate(30px, -50px) scale(1.1); }
-        66% { transform: translate(-20px, 20px) scale(0.9); }
+        25% { transform: translate(50px, -80px) scale(1.2); }
+        50% { transform: translate(-40px, 60px) scale(0.9); }
+        75% { transform: translate(80px, 40px) scale(1.1); }
+    }
+
+    /* Floating Particles */
+    .particle {
+        position: fixed;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0;
+        animation: float-particle linear infinite;
+    }
+
+    @keyframes float-particle {
+        0% {
+            opacity: 0;
+            transform: translateY(0) translateX(0);
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-100vh) translateX(100px);
+        }
     }
 
     /* Content Overlay */
