@@ -24,10 +24,6 @@
                         <p class="text-gray-900 font-semibold"><?= esc($data['nama_lengkap'] ?? '-') ?></p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                        <p class="text-gray-900 font-semibold"><?= esc($data['email'] ?? '-') ?></p>
-                    </div>
-                    <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Nomor Telepon</label>
                         <p class="text-gray-900 font-semibold"><?= esc($data['nomor_telepon'] ?? '-') ?></p>
                     </div>
