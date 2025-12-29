@@ -59,7 +59,7 @@
         </form>
 
         <div class="mt-6 text-center text-sm text-gray-500">
-            <p>Default: username: <strong>admin</strong>, password: <strong>admin123</strong></p>
+            <p>Default: username: <strong>admin</strong>, password: <strong>adminperpusdajateng</strong></p>
         </div>
     </div>
 </body>
