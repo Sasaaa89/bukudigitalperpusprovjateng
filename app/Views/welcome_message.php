@@ -262,7 +262,7 @@
             Learn
         </h2>
 
-        <p>Dokumentasi sistem ini mencakup panduan penggunaan, tutorial, dan referensi lengkap tentang cara menggunakan fitur-fitur sistem layanan pengunjung. Baca <a href="/docs"
+        <p>Dokumentasi sistem ini mencakup panduan penggunaan, tutorial, dan referensi lengkap tentang cara menggunakan fitur-fitur sistem layanan buku tamu digital. Baca <a href="/docs"
             target="_blank">Dokumentasi Lengkap</a> untuk informasi lebih detail!</p>
 
         <h2>

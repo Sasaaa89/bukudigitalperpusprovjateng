@@ -45,7 +45,7 @@
                     <i class="fas fa-book text-blue-600 text-2xl"></i>
                 </div>
                 <h1 class="text-2xl font-bold text-gray-800 mb-2">Perpustakaan</h1>
-                <p class="text-gray-600">Sistem Layanan Pengunjung</p>
+                <p class="text-gray-600">Sistem Layanan Buku Tamu Digital</p>
             </div>
 
             <!-- QR Code -->

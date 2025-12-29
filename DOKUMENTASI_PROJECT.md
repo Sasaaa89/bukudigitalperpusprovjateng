@@ -1,9 +1,9 @@
-# DOKUMENTASI PROJECT - SISTEM LAYANAN PENGUNJUNG PERPUSTAKAAN
+# DOKUMENTASI PROJECT - SISTEM LAYANAN BUKU TAMU DIGITAL PERPUSTAKAAN
 
 ## 📋 DESKRIPSI PROJECT
 
 ### Overview
-Sistem Layanan Pengunjung Perpustakaan adalah aplikasi web berbasis CodeIgniter 4 yang dirancang untuk mengelola dan merekam kunjungan pengunjung perpustakaan secara digital. Sistem ini menggantikan buku tamu fisik dengan solusi digital yang lebih efisien, terintegrasi dengan teknologi QR Code untuk memudahkan akses pengunjung.
+Sistem Layanan Buku Tamu Digital adalah aplikasi web berbasis CodeIgniter 4 yang dirancang untuk mengelola dan merekam kunjungan pengunjung perpustakaan secara digital. Sistem ini menggantikan buku tamu fisik dengan solusi digital yang lebih efisien, terintegrasi dengan teknologi QR Code untuk memudahkan akses pengunjung.
 
 ### Tujuan Project
 - **Digitalisasi Pencatatan**: Mengubah sistem pencatatan manual menjadi digital

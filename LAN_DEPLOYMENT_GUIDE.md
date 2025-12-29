@@ -2,7 +2,7 @@
 
 ## 📋 Deployment Context
 
-**Project Type:** Magang - Sistem Layanan Pengunjung Perpustakaan  
+**Project Type:** Magang - Sistem Layanan Buku Tamu Digital Perpustakaan  
 **Environment:** Internal LAN (No Internet Access)  
 **Maintenance:** Zero maintenance after deployment  
 **Users:** Internal staff + Library visitors (trusted network)  
