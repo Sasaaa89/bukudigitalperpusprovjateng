@@ -53,8 +53,10 @@
                     </div>
 
                 <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan</label>
-                    <p class="text-gray-900"><?= esc($data['keterangan'] ?? '-') ?></p>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan / Pesan</label>
+                    <p class="text-gray-900">
+                        <?= esc($data['pesan'] ?? ($data['keterangan'] ?? '-')) ?>
+                    </p>
                 </div>
 
                 <?php if (!empty($guestBook['file_kunjungan'])): ?>
