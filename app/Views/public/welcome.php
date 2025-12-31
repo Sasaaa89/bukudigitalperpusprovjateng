@@ -138,7 +138,9 @@
 
     /* Glow Effect */
     .glow {
-        text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        text-shadow:
+            0 2px 16px rgba(102, 126, 234, 0.18),
+            0 1px 4px rgba(120, 72, 255, 0.12);
     }
 
     /* Service Cards with Glass Effect */
@@ -191,7 +193,8 @@
                     <i class="fas fa-book-reader text-6xl text-white"></i>
                 </div>
             </div>
-            <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-3 glow">
+
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-3 glow" style="letter-spacing:1px;">
                 Selamat Datang
             </h1>
             <h2 class="text-2xl font-semibold text-gray-700 mb-2">

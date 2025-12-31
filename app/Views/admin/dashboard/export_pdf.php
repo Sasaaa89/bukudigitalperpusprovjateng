@@ -295,7 +295,7 @@
     <!-- STATISTIK BULANAN -->
     <div class="section">
         <div class="section-header">
-            <h3>Statistik Pengunjung Per Bulan (Lifetime)</h3>
+            <h3>Statistik Pengunjung Per Bulan (Real Time)</h3>
         </div>
         <table>
             <thead>
@@ -335,7 +335,7 @@
                 </tr>
                 <?php endforeach; ?>
                 <tr class="total-row">
-                    <td colspan="2">TOTAL KESELURUHAN LIFETIME</td>
+                    <td colspan="2">TOTAL KESELURUHAN REAL TIME</td>
                     <td class="text-center"><?php echo $totalLaki; ?></td>
                     <td class="text-center"><?php echo $totalPerempuan; ?></td>
                     <td class="text-center"><?php echo $totalLaki + $totalPerempuan; ?></td>
@@ -348,7 +348,7 @@
     <!-- STATISTIK TAHUNAN -->
     <div class="section">
         <div class="section-header">
-            <h3>Statistik Pengunjung Per Tahun (Lifetime)</h3>
+            <h3>Statistik Pengunjung Per Tahun (Real Time)</h3>
         </div>
         <table>
             <thead>
